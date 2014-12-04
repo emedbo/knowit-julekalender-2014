@@ -54,8 +54,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\Luke3View.xaml.cs">
+      <DependentUpon>Luke3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Luke3ViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel.cs" />
+    <Page Include="Views\Luke3View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
