@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using System.Windows.Threading;
-using Julekalender.Luker;
 using WpfApplication1.Annotations;
 using WpfApplication1.Views;
 

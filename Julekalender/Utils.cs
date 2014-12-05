@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Julekalender
 {
@@ -113,6 +114,121 @@ namespace Julekalender
                 i++;
             }
             return A;
+        }
+
+        public static int ComputeFactorial(int number)
+        {
+            int factorial = 1;
+            while (number > 1)
+            {
+                factorial *= number;
+                number--;
+            }
+            return factorial;
+        }
+
+        public static int[] FindPrimeFactors(int number, int previousMax, List<int> primesArray = null)
+        {
+            var factors = new List<int>();
+            var root = Math.Sqrt(number);
+            var primes = primesArray ?? FindPrimesBelow((int) root);
+            var index = 0;
+            while (true)
+            {
+                if (index >= primes.Count - 1)
+                {
+                    break;
+                }
+                var i = primes[index];
+                if (i >= (number/2))
+                {
+                    break;
+                }
+                while (number % i == 0)
+                {
+                    if (i > previousMax)
+                    {
+                        return new[] { Int32.MaxValue };
+                    }
+                    if (!factors.Contains(i))
+                    {
+                        factors.Add(i);
+                    }
+                    number /= i;
+                }
+                index++;
+            }
+
+            factors.Add(number);
+
+            return factors.ToArray();
+        }
+
+        public static List<int[]> FindAllPermutations(IList<int> sequence, int nThPermutation = 0, bool returnOnlyLastSequence = false)
+        {
+            int limit = nThPermutation != 0 ? nThPermutation : ComputeFactorial(sequence.Count);
+            List<int[]> permutations = new List<int[]>();
+            int i;
+            int k;
+            int tmp;
+            // find all permutations
+            for (int j = 0; j < limit; j++)
+            {
+                i = 0;
+                k = 0;
+                // Step 1: find K
+                for (int l = sequence.Count - 1; l >= 0; l--)
+                {
+                    if (l + 1 >= sequence.Count)
+                    {
+                        continue;
+                    }
+                    if (sequence[l] < sequence[l + 1])
+                    {
+                        k = l;
+                        break;
+                    }
+                }
+
+                // Step 2: Find i
+                for (int l = k; l < sequence.Count; l++)
+                {
+                    if (sequence[k] < sequence[l])
+                    {
+                        i = l;
+                    }
+                }
+
+                // Step 3: Swap k and i
+                // Swap
+                tmp = sequence[i];
+                sequence[i] = sequence[k];
+                sequence[k] = tmp;
+
+                // Step 4: Reverse from k+1 to n
+                if (k + 1 < sequence.Count - 1)
+                {
+                    int count = 1;
+                    int[] reversedSequence = (int[])sequence.ToArray().Clone();
+
+                    for (int l = k + 1; l < sequence.Count; l++)
+                    {
+                        reversedSequence[l] = sequence[sequence.Count - count];
+                        count++;
+                    }
+
+                    sequence = reversedSequence;
+                }
+                if (!returnOnlyLastSequence)
+                {
+                    permutations.Add(sequence.ToArray().Clone() as int[]);
+                }
+            }
+            if (returnOnlyLastSequence)
+            {
+                return new List<int[]> { sequence.ToArray() };
+            }
+            return permutations;
         }
     }
 }
