@@ -14,14 +14,12 @@ namespace Julekalender.Luker
         private int CountUniqueProducts(int num)
         {
             var table = new Hashtable();
-            var prodCount = 0;
             for (int i = 1; i <= num; i++)
             {
                 for (int j = i; j <= num; j++)
                 {
                     var product = i*j;
                     table[product] = 1;
-                    prodCount++;
                 }
             }
             return table.Count;
