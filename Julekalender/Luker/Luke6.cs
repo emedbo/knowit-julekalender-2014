@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Julekalender.Luker
 {
@@ -13,16 +14,16 @@ namespace Julekalender.Luker
 
         private int CountUniqueProducts(int num)
         {
-            var table = new Hashtable();
+            var table = new bool[num * num + 1];
             for (int i = 1; i <= num; i++)
             {
                 for (int j = i; j <= num; j++)
                 {
                     var product = i*j;
-                    table[product] = 1;
+                    table[product] = true;
                 }
             }
-            return table.Count;
+            return table.Count(x => x);
         }
 
         protected override int GetNummer()
