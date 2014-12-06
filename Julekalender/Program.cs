@@ -13,7 +13,8 @@ namespace Julekalender
             //Console.WriteLine(new Luke2().SolveAndPrint());
             //Console.WriteLine(new Luke3().SolveAndPrint());
             //Console.WriteLine(new Luke4().SolveAndPrint());
-            Console.WriteLine(new Luke5().SolveAndPrint());
+            //Console.WriteLine(new Luke5().SolveAndPrint());
+            Console.WriteLine(new Luke6().SolveAndPrint());
 
             if (swatch.Elapsed.TotalMilliseconds < 1000)
             {
@@ -25,7 +26,7 @@ namespace Julekalender
             }
             else
             {
-                Console.WriteLine("Completed in " + swatch.Elapsed.Minutes + ":" + swatch.Elapsed.Seconds);
+                Console.WriteLine("Completed in " + swatch.Elapsed.Minutes + ":" + swatch.Elapsed.Seconds.ToString().PadLeft(2, '0'));
             }
             
 
