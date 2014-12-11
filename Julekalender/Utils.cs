@@ -4,8 +4,14 @@ using System.Linq;
 
 namespace Julekalender
 {
-    public class Utils
+    public static class Utils
     {
+        public static IEnumerable<T> SkipAndTakeFromBehind<T>(this IEnumerable<T> list, int skip, int take)
+        {
+            var enumerable = list as T[] ?? list.ToArray();
+            return enumerable.Skip(Math.Max(0, enumerable.Count() - (skip + take))).Take(take);
+        }
+
         public static bool IsPalindrom(int num)
         {
             var str = num.ToString();
@@ -75,10 +81,30 @@ namespace Julekalender
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
+        public static List<long> FindPrimesBelowLong(int number)
+        {
+            bool[] A = FindPrimesBoolArray(number);
+            var returnList = new List<long>();
+
+            for (int j = 2; j < A.Length; j++)
+            {
+                if (A[j])
+                {
+                    returnList.Add(j);
+                }
+            }
+            return returnList;
+        }
+
+        /// <summary>
+        /// Using the Sieve of Eratosthenes 
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static List<int> FindPrimesBelow(int number)
         {
             bool[] A = FindPrimesBoolArray(number);
-            List<int> returnList = new List<int>();
+            var returnList = new List<int>();
 
             for (int j = 2; j < A.Length; j++)
             {
