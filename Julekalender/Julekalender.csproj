@@ -50,6 +50,8 @@
     <Compile Include="Luker\Luke11.cs" />
     <Compile Include="Luker\Luke12.cs" />
     <Compile Include="Luker\Luke13.cs" />
+    <Compile Include="Luker\Luke14.cs" />
+    <Compile Include="Luker\Luke15.cs" />
     <Compile Include="Luker\Luke2.cs" />
     <Compile Include="Luker\Luke3.cs" />
     <Compile Include="Luker\Luke4.cs" />
