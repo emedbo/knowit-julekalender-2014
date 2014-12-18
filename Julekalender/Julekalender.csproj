@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +54,9 @@
     <Compile Include="Luker\Luke13.cs" />
     <Compile Include="Luker\Luke14.cs" />
     <Compile Include="Luker\Luke15.cs" />
+    <Compile Include="Luker\Luke16.cs" />
+    <Compile Include="Luker\Luke17.cs" />
+    <Compile Include="Luker\Luke18.cs" />
     <Compile Include="Luker\Luke2.cs" />
     <Compile Include="Luker\Luke3.cs" />
     <Compile Include="Luker\Luke4.cs" />
@@ -68,6 +73,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Luker\Data\Luke18.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Luker\Data\Luke7.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
