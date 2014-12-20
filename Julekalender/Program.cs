@@ -26,7 +26,9 @@ namespace Julekalender
             //Console.WriteLine(new Luke15().SolveAndPrint());
             //Console.WriteLine(new Luke16().SolveAndPrint());
             //Console.WriteLine(new Luke17().SolveAndPrint());
-            Console.WriteLine(new Luke18().SolveAndPrint());
+            //Console.WriteLine(new Luke18().SolveAndPrint());
+            //Console.WriteLine(new Luke19().SolveAndPrint());
+            Console.WriteLine(new Luke20().SolveAndPrint());
 
 
             if (swatch.Elapsed.TotalMilliseconds < 1000)

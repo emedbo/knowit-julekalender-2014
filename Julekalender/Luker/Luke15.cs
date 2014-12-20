@@ -20,7 +20,7 @@ namespace Julekalender.Luker
                         continue;
                     }
                     var prod = i * j;
-                    if (GetDigits(prod).Length < 4)
+                    if (Utils.GetDigits(prod).Length < 4)
                     {
                         continue;
                     }
@@ -35,9 +35,9 @@ namespace Julekalender.Luker
 
         private bool IsMatch(int prod, int fac1, int fac2)
         {
-            var prodArr = new List<int>(GetDigits(prod));
-            var fac1Arr = new List<int>(GetDigits(fac1));
-            var fac2Arr = new List<int>(GetDigits(fac2));
+            var prodArr = new List<int>(Utils.GetDigits(prod));
+            var fac1Arr = new List<int>(Utils.GetDigits(fac1));
+            var fac2Arr = new List<int>(Utils.GetDigits(fac2));
             foreach (var i in prodArr)
             {
                 var match1 = fac1Arr.Any(x => x == i);
@@ -55,16 +55,6 @@ namespace Julekalender.Luker
                 return false;
             }
             return true;
-        }
-
-        private int[] GetDigits(int num)
-        {
-            var numbers = new Stack<int>();
-            for (; num > 0; num /= 10)
-            {
-                numbers.Push(num % 10);
-            }
-            return numbers.ToArray();
         }
 
         protected override int GetNummer()

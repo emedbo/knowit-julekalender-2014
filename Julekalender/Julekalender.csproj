@@ -57,7 +57,9 @@
     <Compile Include="Luker\Luke16.cs" />
     <Compile Include="Luker\Luke17.cs" />
     <Compile Include="Luker\Luke18.cs" />
+    <Compile Include="Luker\Luke19.cs" />
     <Compile Include="Luker\Luke2.cs" />
+    <Compile Include="Luker\Luke20.cs" />
     <Compile Include="Luker\Luke3.cs" />
     <Compile Include="Luker\Luke4.cs" />
     <Compile Include="Luker\Luke5.cs" />

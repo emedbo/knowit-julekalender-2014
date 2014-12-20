@@ -13,10 +13,8 @@ namespace Julekalender
             return enumerable.Skip(Math.Max(0, enumerable.Count() - (skip + take))).Take(take);
         }
 
-        public static bool IsPalindrom(int num)
+        public static bool IsPalindrom(string str)
         {
-            var str = num.ToString();
-
             for (int i = 0; i < str.Length / 2; i++)
             {
                 if (str[i] != str[str.Length - i - 1])
@@ -25,6 +23,13 @@ namespace Julekalender
                 }
             }
             return true;
+        }
+
+        public static bool IsPalindrom(int num)
+        {
+            var str = num.ToString();
+            return IsPalindrom(str);
+            
         }
 
         public static int GetHighest8Pow(int integer)
@@ -270,6 +275,21 @@ namespace Julekalender
                 return new List<int[]> { sequence.ToArray() };
             }
             return permutations;
+        }
+
+        public static int[] GetDigits(int num)
+        {
+            var numbers = new Stack<int>();
+            for (; num > 0; num /= 10)
+            {
+                numbers.Push(num % 10);
+            }
+            return numbers.ToArray();
+        }
+
+        public static int FinnTverrsum(int num)
+        {
+            return GetDigits(Math.Abs(num)).Sum();
         }
     }
 }

@@ -8,6 +8,9 @@
              <DataTemplate DataType="{x:Type views:Luke3ViewModel}">
                  <views:Luke3View/>
              </DataTemplate>
-         </ResourceDictionary>
+            <DataTemplate DataType="{x:Type views:Luke20ViewModel}">
+                <views:Luke20View/>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
