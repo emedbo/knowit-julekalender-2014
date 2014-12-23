@@ -60,6 +60,9 @@
     <Compile Include="Luker\Luke19.cs" />
     <Compile Include="Luker\Luke2.cs" />
     <Compile Include="Luker\Luke20.cs" />
+    <Compile Include="Luker\Luke21.cs" />
+    <Compile Include="Luker\Luke22.cs" />
+    <Compile Include="Luker\Luke23.cs" />
     <Compile Include="Luker\Luke3.cs" />
     <Compile Include="Luker\Luke4.cs" />
     <Compile Include="Luker\Luke5.cs" />
@@ -76,6 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Luker\Data\Luke18.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Luker\Data\Luke21.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Luker\Data\Luke7.png">
